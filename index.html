@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+</head >
+<body>
+    <div class="container">
+        <div class="float">
+            <span onclick="myfunction('#sumary')" class="sumarry">sumarry</span>
+            <span onclick="myfunction('#skills')" class="skills">skills</span>
+            <span onclick="myfunction('#projects')" class="projects">projects</span>
+            <span onclick="myfunction('#contact')" class="contact">contact</span>
+            <button onclick="show()">show</button>
+        </div>
+        <div class="t" id="sumary">
+            <div class="box" data-tilt data-tilt-full-page-listening data-tilt-reverse="true">
+                <p class="text" transform: translateZ(20px)>
+                    "Hey my name is <strong>Mawit bikom gad</strong> I am <br>
+                    a <strong>Web Developer</strong> with an Innovative <br>
+                    mind set , proficient in developing databases, implementing <br>
+                    new feautures based on users feed back and willing to <br>
+                    learn every day." <br><br>
+                    scroll through my portfoloi.
+                </p>
+            </div>
+        </div>
+        <div class="page 2" id="skills">
+            <div class="skill_box" data-tilt="" data-tilt-full-page-listening="">
+                <div class="topic">
+                    <h1>skills</h1>
+                </div>
+                <div class="content">
+                    <div class="languages">
+                        <div class="topic"><h1>programing languages</h1></div>
+                        <div class="lang">
+                            <section>HTML5 <div><div class="bar"></div></div> </section>
+                            <section>css3 <div><div class="bar"></div></div> </section>
+                            <section>JavaScript <div><div class="bar"></div></div> </section>
+                            <section>php <div><div class="bar"></div></div> </section>
+                        </div>
+                    </div>
+                    <div class="others">
+                        <div class="framework">
+                            <h1>frameworks</h1>
+                            <section>jquery <div><div class="bar"></div></div></section>
+                        </div>
+                        <div class="database">
+                            <h1>Data base</h1>
+                            <section>Mysql <div><div class="bar"></div></div></section>
+                        </div>
+                        <div class="design">
+                            <h1>Adobe</h1>
+                            <section>illustration <div><div class="bar"></div></div></section>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            </div>
+        <div class="page 3" id="projects">
+            
+        </div>
+        <div class="page 4" id="contact">
+            <div class="contact_box" data-tilt="" data-tilt-full-page-listening=""> 
+                <form action="">
+                    <section>Title<input type="text" name="Title"></section>
+                    <section>content<textarea name="content" id="" cols="auto" rows="auto"></textarea></section>
+                    <section><input type="submit" name="submit" class="submit"></section>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <script src="./vanilla tilt/vanilla-tilt.babel.min.js"></script>
+      <script>
+          var p = 0;
+          var newpage = 0;
+          let scrolling = false;
+          var item = window.scrollY;
+          const clicked = {
+              status:0,
+              pages:["#sumary","#skills","#projects","#contact"],
+              valeu:1,
+              addi:function (){
+                  clicked.valeu= clicked.valeu + 1;
+              },
+              subi:function (){
+                  clicked.valeu = clicked.valeu - 1;
+              },
+              setpage:function(page){
+                  if ((page > 0) && (clicked.status<3)) {
+                      clicked.status++;
+                  }else if ((page < 0) && (clicked.status>0))
+                  {
+                      clicked.status--;
+                  }              
+                      location.href = clicked.pages[clicked.status];                  
+              }
+          };
+          function myfunction(value) {  
+               clicked.addi();
+               if(value=="#sumary") { 
+                   clicked.status = 0;
+                   clicked.setpage();
+               }else if(value == "#skills") {
+                   clicked.status = 1;
+                   clicked.setpage();
+               }else if(value == "#projects")
+               {
+                   clicked.status = 2;
+                   clicked.setpage();
+               }else if(value == "#contact")
+               {
+                   clicked.status = 3;
+                   clicked.setpage();
+               }
+            
+               setTimeout(() => {
+                    clicked.subi();
+                    
+               }, 1000);
+             }
+             window.addEventListener('wheel',(e)=>{
+                 if (p == 0)
+                 {
+                     p = 1;
+                      var y = e.deltaY;
+                 clicked.setpage(y);
+                 setTimeout(() => {
+                     p = 0;
+                 }, 500);
+                 }
+                
+                
+             });
+           
+          function show ()
+          {
+              alert(clicked.status);
+          }
+              
+      </script>
+</body>
+</html>
