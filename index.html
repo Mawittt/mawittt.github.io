@@ -7,6 +7,225 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css.css">
+    <style>
+    *
+{
+    margin:0%;
+    box-sizing: border-box;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.float
+{
+    position: fixed;
+    top:5vh;
+    display: flex;
+    justify-content: space-evenly;
+    width:100%;
+    font-size: 25px;
+}
+.float span
+{
+    text-decoration: none;
+    border: 1px solid #777777;
+    padding: 1%;
+    border-radius: 5px;
+    color:rgb(163, 162, 161);
+    box-shadow: 2px 2px 2px #000000;
+}
+.float span:hover
+{
+    transition: 0.2s;
+    transform: scale(1.1);
+    color:rgb(255, 174, 0);
+}
+.container{
+    scroll-snap-type: y mandatory;
+    overflow-y:hidden;
+    height: 100vh;
+   
+}
+body .page
+{
+    background:url("image.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid;
+    scroll-snap-align: center;
+}
+
+.box
+{
+    backdrop-filter: blur(3px);
+    border:1px solid #777777;
+    border-radius: 30px 40px 50px  ;
+    padding:1%;
+    height: 55%;
+    width:75%;
+    box-shadow: 5px 5px 5px #000000;
+    transition:0.3s;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    color:rgb(145, 138, 133);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+.text{
+    transform: translateZ(300px);
+}
+.box:hover
+{
+    transition: 0.3s;
+    backdrop-filter: blur(1px);
+    transform: scaleX(50px);
+    text-shadow: 2px 2px 1px #000000;
+    color: rgb(255, 174, 0);
+
+}
+.t{ background:url("image.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid;
+    scroll-snap-align: start;
+}
+.skill_box
+{
+    backdrop-filter: blur(3px);
+    border:1px solid #777777;
+    border-radius: 30px 40px 50px  ;
+    padding:1%;
+    height: 55%;
+    width:75%;
+    box-shadow: 5px 5px 5px #000000;
+    transition:0.3s;
+    display:;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    color:#141414;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+.topic
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+}
+.content 
+{
+    display: flex;
+    justify-content: space-around;
+    height: 60%;
+    width:100%;
+}
+.languages section
+{
+    display: flex;
+    justify-content:;
+    width:100%;
+}
+.frameworks
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    width: 100;
+}
+.bar
+{
+    margin-top: 10px;
+    width: 18vh;
+    height: 2vh;
+    background: rgba(30, 253, 1, 0.527);
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px #000000;
+    border: 1px solid #777777;
+}
+section div{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.framework section, .database section,.design section
+{
+    display: flex;
+    font-size: 30px;
+    margin: 2%;
+}
+.framework section div,.database section div,.design section div 
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+h1{
+    color:rgb(145, 138, 133);
+}
+.contact_box
+{
+    backdrop-filter: blur(3px);
+    border:1px solid #777777;
+    border-radius: 30px 40px 50px  ;
+    padding:1%;
+    height: 55%;
+    width:75%;
+    box-shadow: 5px 5px 5px #000000;
+    transition:0.3s;
+    display:;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    color:#141414;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+form section input
+{
+ 
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+form section 
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top:5%;
+}
+input{
+    margin-left: 2%;
+    background: transparent;
+    backdrop-filter: blur(0px);
+    border:2px solid #000000;
+    box-shadow: 2px 2px 2px #000000 inset;
+}
+textarea
+{
+    margin-left: 1%;
+    background: rgba(248, 114, 61, 0.205);
+    border-radius: 10px;
+    border:2px solid #000000;
+    box-shadow: 2px 2px 2px #000000 inset;
+}
+.submit
+{
+    box-shadow: 2px 2px 2px #000000;
+    border:2px solid #777777;
+}
+</style>
 </head >
 <body>
     <div class="container">
